@@ -1,10 +1,10 @@
 window.onload = function() {
-	if(localStorage.getItem("message") {
+	if(localStorage.getItem("message")) {
 		let message = localStorage.getItem("message");
 		const local = document.getElementById("local");
 		local.textContent = "In local storage:"+message
 	}
-	if(sessionStorage.getItem("message") {
+	if(sessionStorage.getItem("message")) {
 		let message = sessionStorage.getItem("message");
 		const session = document.getElementById("session");
 		session.textContent = "In session storage:"+message
