@@ -24,5 +24,5 @@ function findMe() {
 	} else {
 		status.textContent = "Locating..."
 	}
-	navigator.getlocation.getCurrentPosition(success,error);
+	navigator.geolocation.getCurrentPosition(success,error);
 }
