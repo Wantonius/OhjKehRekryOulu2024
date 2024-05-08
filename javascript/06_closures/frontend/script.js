@@ -24,3 +24,47 @@ const changeFontSize = function() {
 		}
 	}
 }
+
+const makeCounter = function(val) {
+	
+	let privateCounter = 0;
+	if(val) {
+		privateCounter = val;
+	}
+	
+	function changeBy(val) {
+		privateCounter += val;
+	}
+	
+	return {
+		increment: function() {
+			changeBy(1);
+		},
+		decrement: function() {
+			changeBy(-1);
+		},
+		value: function() {
+			return privateCounter;
+		}
+	}
+}
+
+function start() {
+	let counter1 = makeCounter(5);
+	let counter2 = makeCounter(5);
+	
+	console.log("Counter 1 value:",counter1.value());
+	console.log("Counter 2 value:",counter2.value());
+	
+	counter1.increment();
+	counter1.increment();
+	counter1.increment();
+
+	counter2.decrement();
+	counter2.decrement();
+	counter2.decrement();
+	
+	console.log("Counter 1 value:",counter1.value());
+	console.log("Counter 2 value:",counter2.value());
+	
+}
