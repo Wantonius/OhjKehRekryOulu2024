@@ -136,7 +136,7 @@ app.post("/login", function(req,res) {
 	});
 })
 
-app.use("/api",shoppingRoute);
+app.use("/api",isUserLogged,shoppingRoute);
 
 console.log("Running in port 3000");
 
