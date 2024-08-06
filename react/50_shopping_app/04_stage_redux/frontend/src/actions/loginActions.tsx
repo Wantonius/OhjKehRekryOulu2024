@@ -24,7 +24,7 @@ const handleLogin = async (request:Request,act:string,dispatch:ThunkDispatch<any
 	const response = await fetch(request);
 	dispatch(stopLoading());
 	if(!response) {
-		dispatch(logoutFailed("Server never responded. Resetting");
+		dispatch(logoutFailed("Server never responded. Resetting"));
 		return;
 	}
 	if(response.ok) {
