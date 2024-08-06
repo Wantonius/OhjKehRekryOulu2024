@@ -4,18 +4,34 @@ import ShoppingList from './components/ShoppingList';
 import Navbar from './components/Navbar';
 import LoginPage from './components/LoginPage';
 import {Routes,Route,Navigate} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import {AppState} from './types/states';
 function App() {
+	
+	const stateSelector = (state:AppState) => {
+		let error = state.shopping.error;
+		if(state.login.error) {
+			error = state.login.error
+		}
+		return {
+			loading:state.login.loading,
+			error:error,
+			isLogged:state.login.isLogged
+		}
+	}
+	
+	const appState = useSelector(stateSelector);
 	
 	const {state,add,remove,edit,register,login,logout,setError} = useAction();
 	
 	let messageArea = <h4 style={{height:50,textAlign:"center"}}></h4>
-	if(state.loading) {
+	if(appState.loading) {
 		messageArea = <h4 style={{height:50,textAlign:"center"}}>Loading ...</h4>
 	}
-	if(state.error) {
-		messageArea = <h4 style={{height:50,textAlign:"center"}}>{state.error}</h4>
+	if(appState.error) {
+		messageArea = <h4 style={{height:50,textAlign:"center"}}>{appState.error}</h4>
 	}
-	if(state.isLogged) {
+	if(appState.isLogged) {
 		return (
 			<>
 				<Navbar logout={logout} isLogged={state.isLogged} user={state.user}/>
