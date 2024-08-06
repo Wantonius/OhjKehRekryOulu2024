@@ -15,7 +15,7 @@ const getInitialState = ():ShoppingState => {
 }
 
 const saveToStorage = (state:ShoppingState) => {
-	sessionStorage.setItem("shoppingstate",JSON.stringify(shoppingstate));
+	sessionStorage.setItem("shoppingstate",JSON.stringify(state));
 }
 
 const initialState:ShoppingState = getInitialState();
