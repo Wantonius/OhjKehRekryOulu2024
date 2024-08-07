@@ -5,13 +5,7 @@ import {AnyAction} from 'redux';
 import {ThunkDispatch} from 'redux-thunk';
 import {AppState} from '../types/states';
 
-interface Props {
-	logout():void;
-	isLogged:boolean;
-	user:string;
-}
-
-const Navbar = (props:Props) => {
+const Navbar = () => {
 	
 	const dispatch:ThunkDispatch<any,any,AnyAction> = useDispatch();
 	

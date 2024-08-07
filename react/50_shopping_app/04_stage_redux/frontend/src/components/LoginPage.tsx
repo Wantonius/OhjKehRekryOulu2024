@@ -5,18 +5,13 @@ import {useDispatch} from 'react-redux';
 import {AnyAction} from 'redux';
 import {ThunkDispatch} from 'redux-thunk';
 
-interface Props {
-	register(user:User):void;
-	login(user:User):void;
-	setError(error:string):void;
-}
 
 interface State {
 	username:string;
 	password:string;
 }
 
-const LoginPage = (props:Props) => {
+const LoginPage = () => {
 	
 	const [state,setState] = useState<State>({
 		username:"",

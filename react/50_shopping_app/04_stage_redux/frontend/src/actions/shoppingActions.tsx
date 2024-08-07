@@ -75,18 +75,18 @@ const handleFetch = async (request:Request,act:string,dispatch:ThunkDispatch<any
 					return;
 				}
 				let list = temp as ShoppingItem[];
-				dispatch(fetchItemSuccess(list));
+				dispatch(fetchListSuccess(list));
 				return;
 			case "additem":
-				dispatch(fetchItemSuccess(actionConstants.ADD_ITEM_SUCCESS);
+				dispatch(fetchItemSuccess(actionConstants.ADD_ITEM_SUCCESS));
 				dispatch(getList(token));
 				return
 			case "removeitem":
-				dispatch(fetchItemSuccess(actionConstants.REMOVE_ITEM_SUCCESS);
+				dispatch(fetchItemSuccess(actionConstants.REMOVE_ITEM_SUCCESS));
 				dispatch(getList(token));
 				return
 			case "edititem":
-				dispatch(fetchItemSuccess(actionConstants.EDIT_ITEM_SUCCESS);
+				dispatch(fetchItemSuccess(actionConstants.EDIT_ITEM_SUCCESS));
 				dispatch(getList(token));
 				return;
 			default:

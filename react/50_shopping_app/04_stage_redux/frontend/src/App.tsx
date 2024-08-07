@@ -1,4 +1,3 @@
-import useAction from './hooks/useAction';
 import ShoppingForm from './components/ShoppingForm';
 import ShoppingList from './components/ShoppingList';
 import Navbar from './components/Navbar';
@@ -22,7 +21,6 @@ function App() {
 	
 	const appState = useSelector(stateSelector);
 	
-	const {state,add,remove,edit,register,login,logout,setError} = useAction();
 	
 	let messageArea = <h4 style={{height:50,textAlign:"center"}}></h4>
 	if(appState.loading) {
@@ -34,11 +32,11 @@ function App() {
 	if(appState.isLogged) {
 		return (
 			<>
-				<Navbar logout={logout} isLogged={state.isLogged} user={state.user}/>
+				<Navbar />
 					{messageArea}
 				<Routes>
-					<Route path="/" element={<ShoppingList list={state.list} remove={remove} edit={edit}/>} />
-					<Route path="/form" element={<ShoppingForm add={add}/>}/>
+					<Route path="/" element={<ShoppingList />} />
+					<Route path="/form" element={<ShoppingForm />}/>
 					<Route path="*" element={<Navigate to="/"/>} />
 				</Routes>
 			</>
@@ -46,10 +44,10 @@ function App() {
 	} else {
 		return (
 			<>
-				<Navbar logout={logout} isLogged={state.isLogged} user={state.user}/>
+				<Navbar />
 					{messageArea}
 				<Routes>
-					<Route path="/" element={<LoginPage register={register} login={login} setError={setError}/>} />
+					<Route path="/" element={<LoginPage />} />
 					<Route path="*" element={<Navigate to="/"/>} />
 				</Routes>
 			</>
