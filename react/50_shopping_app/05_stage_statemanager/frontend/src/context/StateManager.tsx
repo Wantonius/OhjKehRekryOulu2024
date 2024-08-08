@@ -10,7 +10,7 @@ interface Props {
 	children:React.ReactNode;
 }
 
-const getInitialState = ():AppState = {
+const getInitialState = ():AppState => {
 	let state = sessionStorage.getItem("state");
 	if(state) {
 		return JSON.parse(state)
@@ -113,10 +113,9 @@ const listReducer = (state:AppState,action:Action):AppState => {
 		case actionConstants.EDIT_ITEM_FAILED:
 		case actionConstants.REGISTER_FAILED:
 		case actionConstants.LOGIN_FAILED:
-			let error = action.payload as string;
 			tempState = {
 				...state,
-				error:error
+				error:action.payload as string
 			}
 			saveToStorage(tempState);
 			return tempState;
