@@ -96,8 +96,8 @@ const useAction = () => {
 						})
 						return;
 					case "login": 
-						let token = await response.json();
-						let data = token as Token;
+						let token2 = await response.json();
+						let data = token2 as Token;
 						dispatch({
 							type:actionConstants.LOGIN_SUCCESS,
 							payload:data.token
@@ -266,7 +266,7 @@ const useAction = () => {
 			request:new Request("/logout",{
 				method:"POST",
 				headers:{
-					"token":state.token
+					"token":token
 				}
 			}),
 			action:"logout"
