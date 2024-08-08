@@ -1,8 +1,8 @@
-const express = require("express");
-const bodyParser = require("body-parser");
+import express from 'express';	
 
 let app = express();
 
+app.use(express.json());
 //DATABASE
 let messageDatabase = []
 
@@ -65,7 +65,6 @@ isUserLogged = (req,res,next) => {
 	return res.status(403).json({message:"forbidden"});
 }
 
-app.use(bodyParser.json());
 app.use("/api",isUserLogged);
 
 //LOGIN API
