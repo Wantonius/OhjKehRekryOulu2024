@@ -33,7 +33,7 @@ const ShoppingForm = (props) => {
 								...state,
 								type:text
 							}
-						}}						
+						})						
 					}}
 					value={state.type}/>
 			</View>
@@ -46,7 +46,7 @@ const ShoppingForm = (props) => {
 								...state,
 								count:text
 							}
-						}}						
+						})						
 					}}
 					value={state.count}
 					inputMode="numeric"/>
@@ -60,9 +60,9 @@ const ShoppingForm = (props) => {
 								...state,
 								price:text
 							}
-						}}						
+						})						
 					}}
-					value={state.type}
+					value={state.price}
 					inputMode="numeric"/>
 			</View>
 			<View style={[styles.row,styles.buttonRow]}>
