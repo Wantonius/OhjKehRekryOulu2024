@@ -15,7 +15,7 @@ const useAction = () => {
 	
 	const {token} = useAppState();
 	
-	const baseUrl = "https://cautious-fishstick-y5hp.onrender.com/";
+	const baseUrl = "https://cautious-fishstick-y5hp.onrender.com";
 	
 	//FETCH USEEFFECT
 	
@@ -34,7 +34,7 @@ const useAction = () => {
 				type:actionConstants.LOADING
 			})
 			let url = baseUrl+urlRequest.url;
-			const respose = await fetch(url,urlRequest.request);
+			const response = await fetch(url,urlRequest.request);
 			dispatch({
 				type:actionConstants.STOP_LOADING
 			})

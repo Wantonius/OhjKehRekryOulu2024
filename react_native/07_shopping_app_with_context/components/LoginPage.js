@@ -30,26 +30,26 @@ const LoginPage = (props) => {
 			<View style={styles.row}>
 				<Text style={[styles.text,styles.label]}>Username:</Text>
 				<TextInput style={[styles.text,styles.input]}
-					onChangeText=((text) => {
+					onChangeText={(text) => {
 						setState((state) => {
 							return {
 								...state,
 								username:text
 							}
 						})
-					}) placeholder="Username" value={state.username}/>
+					}} placeholder="Username" value={state.username}/>
 			</View>
 			<View style={styles.row}>
 				<Text style={[styles.text,styles.label]}>Password:</Text>
 				<TextInput style={[styles.text,styles.input]}
-					onChangeText=((text) => {
+					onChangeText={(text) => {
 						setState((state) => {
 							return {
 								...state,
 								password:text
 							}
 						})
-					}) placeholder="Password" value={state.password} secureTextEntry={true}/>
+					}} placeholder="Password" value={state.password} secureTextEntry={true}/>
 			</View>
 			<View style={[styles.row,styles.buttonRow]}>
 				<Pressable style={styles.registerButton}
