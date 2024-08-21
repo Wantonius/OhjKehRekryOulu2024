@@ -11,7 +11,7 @@ const ShoppingList = (props) => {
 		<View style={styles.container}>
 			<View style={styles.buttonBox}>
 				<Pressable style={styles.navigateButton}
-					onPress={() => props.navigation.navigate("ShoppingForm")}>
+					onPress={() => props.navigation.navigate("Add Item")}>
 					<Text style={styles.textStyle}>Add new item</Text>
 				</Pressable>
 				<Pressable style={[styles.navigateButton,styles.logoutButton]}
